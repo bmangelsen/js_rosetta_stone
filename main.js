@@ -23,7 +23,7 @@ var sentence = "Schlitz four dollar toast godard truffaut bespoke neutra artisan
 var newSentence = sentence.replace(/\./g, "").split(" ");
 console.log(newSentence);
 
-console.log("SIX CHARACTER WORDS");
+console.log("SIX CHARACTER WORDS:");
 function lengthCheck (word) {
   if ( word.length == 6 ) {
     console.log(word);
@@ -86,3 +86,8 @@ console.log("LEONARDO MOVIES:");
 for ( x = 0; x < leoMovies.length; x++) {
   console.log(leoMovies[x].title)
 }
+
+var button = document.getElementById("buttonid");
+button.addEventListener("click", function() { alert(document.getElementById("inputid").value);});
+button.addEventListener("mouseover", function() { this.style.backgroundColor = "red";});
+button.addEventListener("mouseout", function() { this.style.backgroundColor = "white";});

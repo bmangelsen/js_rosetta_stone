@@ -23,6 +23,7 @@ var sentence = "Schlitz four dollar toast godard truffaut bespoke neutra artisan
 var newSentence = sentence.replace(/\./g, "").split(" ");
 console.log(newSentence);
 
+console.log("SIX CHARACTER WORDS");
 function lengthCheck (word) {
   if ( word.length == 6 ) {
     console.log(word);
@@ -30,3 +31,58 @@ function lengthCheck (word) {
 }
 
 newSentence.forEach(lengthCheck);
+
+//Create an array of movies with budgets of less than 100 and another array of movies that starred Leonard DiCaprio.
+
+
+var movies = [];
+movies.push({
+  title: "Forest Gump",
+  budget: 55,
+  stars: ["Tom Hanks"]
+});
+movies.push({
+  title: "Star Wars",
+  budget: 11,
+  stars: ["Mark Hamill", "Harrison Ford"]
+});
+movies.push({
+  title: "Batman Begins",
+  budget: 150,
+  stars: ["Christian Bale", "Liam Neeson", "Michael Caine"]
+});
+movies.push({
+  title: "Titanic",
+  budget: 200,
+  stars: ["Kate Winslet", "Leonardo DiCaprio"]
+});
+movies.push({
+  title: "Inception",
+  budget: 160,
+  stars: ["Leonardo DiCaprio", "JGL"]
+});
+
+var lowBudget = [];
+var leoMovies = [];
+
+movies.forEach( function cheap (movie) {
+  if ( movie.budget < 100 ) {
+    lowBudget.push(movie);
+  }
+});
+
+movies.forEach(function leo (movie) {
+  if ( movie.stars.includes("Leonardo DiCaprio")) {
+    leoMovies.push(movie);
+  }
+});
+
+console.log("LOW BUDGET MOVIES:");
+for ( x = 0; x < lowBudget.length; x++) {
+  console.log(lowBudget[x].title)
+}
+
+console.log("LEONARDO MOVIES:");
+for ( x = 0; x < leoMovies.length; x++) {
+  console.log(leoMovies[x].title)
+}
